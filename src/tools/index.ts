@@ -79,30 +79,15 @@ import { tool as xmlFormatter } from './xml-formatter';
 import { tool as yamlViewer } from './yaml-viewer';
 
 export const toolsByCategory: ToolCategory[] = [
+ 
   {
-    name: 'Crypto',
-    components: [tokenGenerator, hashText, bcrypt, uuidGenerator, ulidGenerator, cypher, bip39, hmacGenerator, rsaKeyPairGenerator, passwordStrengthAnalyser, pdfSignatureChecker],
-  },
-  {
-    name: 'Converter',
+    name: 'Common tool',
     components: [
-      dateTimeConverter,
-      baseConverter,
-      romanNumeralConverter,
-      base64StringConverter,
-      base64FileConverter,
-      colorConverter,
-      caseConverter,
-      textToNatoAlphabet,
-      textToBinary,
-      textToUnicode,
-      yamlToJson,
-      yamlToToml,
-      jsonToYaml,
-      jsonToToml,
-      listConverter,
-      tomlToJson,
-      tomlToYaml,
+      jsonViewer,
+      jsonMinify,
+      jsonDiff,
+      crontabGenerator,
+      sqlPrettify,
     ],
   },
   {
@@ -165,6 +150,33 @@ export const toolsByCategory: ToolCategory[] = [
     name: 'Data',
     components: [phoneParserAndFormatter, ibanValidatorAndParser],
   },
+  {
+    name: 'Converter',
+    components: [
+      dateTimeConverter,
+      baseConverter,
+      romanNumeralConverter,
+      base64StringConverter,
+      base64FileConverter,
+      colorConverter,
+      caseConverter,
+      textToNatoAlphabet,
+      textToBinary,
+      textToUnicode,
+      yamlToJson,
+      yamlToToml,
+      jsonToYaml,
+      jsonToToml,
+      listConverter,
+      tomlToJson,
+      tomlToYaml,
+    ],
+  },
+  {
+    name: 'Crypto',
+    components: [tokenGenerator, hashText, bcrypt, uuidGenerator, ulidGenerator, cypher, bip39, hmacGenerator, rsaKeyPairGenerator, passwordStrengthAnalyser, pdfSignatureChecker],
+  },
+  
 ];
 
 export const tools = toolsByCategory.flatMap(({ components }) => components);

@@ -5,7 +5,8 @@ import { RouterLink } from 'vue-router';
 import { Heart, Home2, Menu2 } from '@vicons/tabler';
 
 import { storeToRefs } from 'pinia';
-import HeroGradient from '../assets/hero-gradient.svg?component';
+import SharkGradient from '../assets/shark.svg?component';
+
 import MenuLayout from '../components/MenuLayout.vue';
 import NavbarButtons from '../components/NavbarButtons.vue';
 import { useStyleStore } from '@/stores/style.store';
@@ -36,16 +37,18 @@ const tools = computed<ToolCategory[]>(() => [
   <MenuLayout class="menu-layout" :class="{ isSmallScreen: styleStore.isSmallScreen }">
     <template #sider>
       <RouterLink to="/" class="hero-wrapper">
-        <HeroGradient class="gradient" />
+       
+        <SharkGradient class="gradient" />
         <div class="text-wrapper">
           <div class="title">
-            IT - TOOLS
+            SHARK-TOOLS
           </div>
-          <div class="divider" />
-          <div class="subtitle">
+          <!-- <div class="divider" /> -->
+          <!-- <div class="subtitle">
             {{ $t('home.subtitle') }}
-          </div>
+          </div> -->
         </div>
+       
       </RouterLink>
 
       <div class="sider-content">
@@ -59,7 +62,7 @@ const tools = computed<ToolCategory[]>(() => [
 
         <CollapsibleToolMenu :tools-by-category="tools" />
 
-        <div class="footer">
+        <!-- <div class="footer">
           <div>
             IT-Tools
 
@@ -85,7 +88,7 @@ const tools = computed<ToolCategory[]>(() => [
               Corentin Thomasset
             </c-link>
           </div>
-        </div>
+        </div> -->
       </div>
     </template>
 
@@ -116,12 +119,12 @@ const tools = computed<ToolCategory[]>(() => [
 
         <locale-selector v-if="!styleStore.isSmallScreen" />
 
-        <div>
+        <!-- <div>
           <NavbarButtons v-if="!styleStore.isSmallScreen" />
-        </div>
+        </div> -->
 
         <c-tooltip position="bottom" :tooltip="$t('home.support')">
-          <c-button
+          <!-- <c-button
             round
             href="https://www.buymeacoffee.com/cthmsst"
             rel="noopener"
@@ -132,7 +135,7 @@ const tools = computed<ToolCategory[]>(() => [
           >
             {{ $t('home.buyMeACoffee') }}
             <NIcon v-if="!styleStore.isSmallScreen" :component="Heart" ml-2 />
-          </c-button>
+          </c-button> -->
         </c-tooltip>
       </div>
       <slot />
@@ -186,7 +189,7 @@ const tools = computed<ToolCategory[]>(() => [
   overflow: hidden;
 
   .gradient {
-    margin-top: -65px;
+    margin-top: -50px;
   }
 
   .text-wrapper {
@@ -194,11 +197,11 @@ const tools = computed<ToolCategory[]>(() => [
     left: 0;
     width: 100%;
     text-align: center;
-    top: 16px;
+    top: 133px;
     color: #fff;
 
     .title {
-      font-size: 25px;
+      font-size: 16px;
       font-weight: 600;
     }
 
