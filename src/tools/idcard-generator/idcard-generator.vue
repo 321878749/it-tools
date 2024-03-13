@@ -1,9 +1,7 @@
 <script setup lang="ts">
-
 import type { RegionModel } from 'v-region';
 import { RegionSelects } from 'v-region';
 import { ref } from 'vue';
-import { useStyleStore } from '@/stores/style.store';
 
 // 随机生成姓名
 function generateChineseName(): string {
@@ -118,9 +116,9 @@ function idcardGenertor(e: Event) {
   helpers.value.push({ 身份证号: id_no_String, 姓名: generateChineseName() });
   return id_no_String;
 }
-function idCardGenertors(e: Event){
+function idCardGenertors(e: Event) {
   helpers.value = [];
-  for(let i = 0; i<count.value; i++){
+  for (let i = 0; i < count.value; i++) {
     idcardGenertor(e);
   }
 }
@@ -185,11 +183,20 @@ function timestampToDateString(timestamp: number): string {
         <n-input-group-label style="flex: 0 0 110px">
           {{ "年龄" }}
         </n-input-group-label>
-        <n-input-number v-model:value="startAge" clearable style="width:130px" />
+        <n-input-number
+          v-model:value="startAge"
+          :min="1"
+          :max="100"
+          clearable style="width:130px"
+        />
         <div style="margin-left:18px !important;margin-right:18px;">
           -
         </div>
-        <n-input-number v-model:value="endAge" clearable style="width:130px" />
+        <n-input-number
+          v-model:value="endAge"
+          :min="2"
+          :max="100"
+          clearable style="width:130px" />
       </n-input-group>
       <n-input-group style="margin-bottom: 15px">
         <n-input-group-label style="flex: 0 0 110px">
@@ -223,7 +230,11 @@ function timestampToDateString(timestamp: number): string {
         <n-input-group-label style="flex: 0 0 110px">
           {{ "数量" }}
         </n-input-group-label>
-        <n-input-number v-model:value="count" clearable style="width:300px" />
+        <n-input-number
+            v-model:value="count"
+            :min="1"
+            :max="50"
+            clearable style="width:300px" />
       </n-input-group>
     </div>
     <div flex justify-center>
@@ -233,7 +244,9 @@ function timestampToDateString(timestamp: number): string {
     </div>
   </c-card>
   <c-card>
-    <div class="title">生成结果</div>
+    <div class="title">
+      生成结果
+    </div>
     <c-table :data="helpers" />
   </c-card>
 </template>
