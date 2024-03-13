@@ -23,7 +23,7 @@ const prettySQL = computed(() => formatSQL(rawSQL.value, config));
       <c-select
         v-model:value="config.language"
         flex-1
-        label="Dialect"
+        label="方言"
         :options="[
           { label: 'GCP BigQuery', value: 'bigquery' },
           { label: 'IBM DB2', value: 'db2' },
@@ -41,21 +41,21 @@ const prettySQL = computed(() => formatSQL(rawSQL.value, config));
         ]"
       />
       <c-select
-        v-model:value="config.keywordCase" label="Keyword case"
+        v-model:value="config.keywordCase" label="关键子大小写"
         flex-1
         :options="[
-          { label: 'UPPERCASE', value: 'upper' },
-          { label: 'lowercase', value: 'lower' },
-          { label: 'Preserve', value: 'preserve' },
+          { label: '大写', value: 'upper' },
+          { label: '小写', value: 'lower' },
+          { label: '保存', value: 'preserve' },
         ]"
       />
       <c-select
-        v-model:value="config.indentStyle" label="Indent style"
+        v-model:value="config.indentStyle" label="缩进样式"
         flex-1
         :options="[
-          { label: 'Standard', value: 'standard' },
-          { label: 'Tabular left', value: 'tabularLeft' },
-          { label: 'Tabular right', value: 'tabularRight' },
+          { label: '标准', value: 'standard' },
+          { label: '表格左侧', value: 'tabularLeft' },
+          { label: '表格右侧', value: 'tabularRight' },
         ]"
       />
     </div>
