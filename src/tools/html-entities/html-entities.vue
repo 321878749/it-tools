@@ -13,23 +13,23 @@ const { copy: copyUnescaped } = useCopy({ source: unescapeOutput });
 </script>
 
 <template>
-  <c-card title="Escape html entities">
-    <n-form-item label="Your string :">
+  <c-card title="转义 html 实体">
+    <n-form-item label="你的字符串 :">
       <c-input-text
         v-model:value="escapeInput"
         multiline
-        placeholder="The string to escape"
+        placeholder="要转义的字符串"
         rows="3"
         autosize
         raw-text
       />
     </n-form-item>
 
-    <n-form-item label="Your string escaped :">
+    <n-form-item label="你的转义字符串 :">
       <c-input-text
         multiline
         readonly
-        placeholder="Your string escaped"
+        placeholder="你的转义字符串"
         :value="escapeOutput"
         rows="3"
         autosize
@@ -38,28 +38,28 @@ const { copy: copyUnescaped } = useCopy({ source: unescapeOutput });
 
     <div flex justify-center>
       <c-button @click="copyEscaped()">
-        Copy
+        复制
       </c-button>
     </div>
   </c-card>
-  <c-card title="Unescape html entities">
-    <n-form-item label="Your escaped string :">
+  <c-card title="取消转义 html 实体">
+    <n-form-item label=" 您的转义字符串 :">
       <c-input-text
         v-model:value="unescapeInput"
         multiline
-        placeholder="The string to unescape"
+        placeholder="需要转成未转义的字符串"
         rows="3"
         autosize
         raw-text
       />
     </n-form-item>
 
-    <n-form-item label="Your string unescaped :">
+    <n-form-item label="您未转义的字符串 :">
       <c-input-text
         :value="unescapeOutput"
         multiline
         readonly
-        placeholder="Your string unescaped"
+        placeholder="您未转义的字符串"
         rows="3"
         autosize
       />
@@ -67,7 +67,7 @@ const { copy: copyUnescaped } = useCopy({ source: unescapeOutput });
 
     <div flex justify-center>
       <c-button @click="copyUnescaped()">
-        Copy
+        复制
       </c-button>
     </div>
   </c-card>

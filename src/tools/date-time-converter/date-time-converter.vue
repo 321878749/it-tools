@@ -35,61 +35,61 @@ const toDate: ToDateMapper = date => new Date(date);
 
 const formats: DateFormat[] = [
   {
-    name: 'JS locale date string',
+    name: '区域设置日期字符串',
     fromDate: date => date.toString(),
     toDate,
     formatMatcher: () => false,
   },
   {
-    name: 'ISO 8601',
+    name: '国际标准化组织 8601',
     fromDate: formatISO,
     toDate: parseISO,
     formatMatcher: date => isISO8601DateTimeString(date),
   },
   {
-    name: 'ISO 9075',
+    name: '国际标准化组织 9075',
     fromDate: formatISO9075,
     toDate: parseISO,
     formatMatcher: date => isISO9075DateString(date),
   },
   {
-    name: 'RFC 3339',
+    name: 'RFC 3339 （英语）',
     fromDate: formatRFC3339,
     toDate,
     formatMatcher: date => isRFC3339DateString(date),
   },
   {
-    name: 'RFC 7231',
+    name: 'RFC 7231 （英语）',
     fromDate: formatRFC7231,
     toDate,
     formatMatcher: date => isRFC7231DateString(date),
   },
   {
-    name: 'Unix timestamp',
+    name: 'Unix 时间戳',
     fromDate: date => String(getUnixTime(date)),
     toDate: sec => fromUnixTime(+sec),
     formatMatcher: date => isUnixTimestamp(date),
   },
   {
-    name: 'Timestamp',
+    name: '时间戳',
     fromDate: date => String(getTime(date)),
     toDate: ms => parseJSON(+ms),
     formatMatcher: date => isTimestamp(date),
   },
   {
-    name: 'UTC format',
+    name: 'UTC 格式',
     fromDate: date => date.toUTCString(),
     toDate,
     formatMatcher: date => isUTCDateString(date),
   },
   {
-    name: 'Mongo ObjectID',
+    name: 'Mongo 对象ID',
     fromDate: date => `${Math.floor(date.getTime() / 1000).toString(16)}0000000000000000`,
     toDate: objectId => new Date(Number.parseInt(objectId.substring(0, 8), 16) * 1000),
     formatMatcher: date => isMongoObjectId(date),
   },
   {
-    name: 'Excel date/time',
+    name: 'Excel 日期/时间',
     fromDate: date => dateToExcelFormat(date),
     toDate: excelFormatToDate,
     formatMatcher: isExcelFormat,
@@ -126,7 +126,7 @@ const validation = useValidation({
   watch: [formatIndex],
   rules: [
     {
-      message: 'This date is invalid for this format',
+      message: '此日期对于此格式无效',
       validator: value =>
         withDefaultOnError(() => {
           if (value === '') {
@@ -155,7 +155,7 @@ function formatDateUsingFormatter(formatter: (date: Date) => string, date?: Date
       <c-input-text
         v-model:value="inputDate"
         autofocus
-        placeholder="Put your date string here..."
+        placeholder="将您的日期字符串放在这里..."
         clearable
         test-id="date-time-converter-input"
         :validation="validation"

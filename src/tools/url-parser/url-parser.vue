@@ -14,13 +14,13 @@ const urlValidationRules = [
 ];
 
 const properties: { title: string; key: keyof URL }[] = [
-  { title: 'Protocol', key: 'protocol' },
-  { title: 'Username', key: 'username' },
-  { title: 'Password', key: 'password' },
-  { title: 'Hostname', key: 'hostname' },
-  { title: 'Port', key: 'port' },
-  { title: 'Path', key: 'pathname' },
-  { title: 'Params', key: 'search' },
+  { title: '协议', key: 'protocol' },
+  { title: '用户名', key: 'username' },
+  { title: '密码', key: 'password' },
+  { title: '主机名', key: 'hostname' },
+  { title: '端口', key: 'port' },
+  { title: '路径', key: 'pathname' },
+  { title: '参数', key: 'search' },
 ];
 </script>
 
@@ -28,8 +28,8 @@ const properties: { title: string; key: keyof URL }[] = [
   <c-card>
     <c-input-text
       v-model:value="urlToParse"
-      label="Your url to parse:"
-      placeholder="Your url to parse..."
+      label="要解析的 URL:"
+      placeholder="要解析的 URL..."
       raw-text
       :validation-rules="urlValidationRules"
     />

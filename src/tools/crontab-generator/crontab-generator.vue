@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import cronstrue from 'cronstrue';
+import cronstrue from 'cronstrue/i18n';
 import { isValidCron } from 'cron-validator';
 import { useStyleStore } from '@/stores/style.store';
 
@@ -15,78 +15,79 @@ const cronstrueConfig = reactive({
   dayOfWeekStartIndexZero: true,
   use24HourTimeFormat: true,
   throwExceptionOnParseError: true,
+  locale: "zh_CN",
 });
 
 const helpers = [
   {
     symbol: '*',
-    meaning: 'Any value',
+    meaning: '任何值',
     example: '* * * *',
-    equivalent: 'Every minute',
+    equivalent: '每分钟',
   },
   {
     symbol: '-',
-    meaning: 'Range of values',
+    meaning: '值范围',
     example: '1-10 * * *',
-    equivalent: 'Minutes 1 through 10',
+    equivalent: '第 1 分钟到第 10 分钟',
   },
   {
     symbol: ',',
-    meaning: 'List of values',
+    meaning: '多个值',
     example: '1,10 * * *',
-    equivalent: 'At minutes 1 and 10',
+    equivalent: '在第 1 分钟和第 10 分钟',
   },
   {
     symbol: '/',
-    meaning: 'Step values',
+    meaning: '执行频率',
     example: '*/10 * * *',
-    equivalent: 'Every 10 minutes',
+    equivalent: '每10分钟执行',
   },
   {
     symbol: '@yearly',
-    meaning: 'Once every year at midnight of 1 January',
+    meaning: '每年1月1日午夜一次',
     example: '@yearly',
     equivalent: '0 0 1 1 *',
   },
   {
     symbol: '@annually',
-    meaning: 'Same as @yearly',
+    meaning: '和 @yearly 相同',
     example: '@annually',
     equivalent: '0 0 1 1 *',
   },
   {
     symbol: '@monthly',
-    meaning: 'Once a month at midnight on the first day',
+    meaning: '每月一次，第一天零点',
     example: '@monthly',
     equivalent: '0 0 1 * *',
   },
   {
     symbol: '@weekly',
-    meaning: 'Once a week at midnight on Sunday morning',
+    meaning: '每周一次，周日零点',
     example: '@weekly',
     equivalent: '0 0 * * 0',
   },
   {
     symbol: '@daily',
-    meaning: 'Once a day at midnight',
+    meaning: '每天零点一次',
     example: '@daily',
     equivalent: '0 0 * * *',
   },
   {
     symbol: '@midnight',
-    meaning: 'Same as @daily',
+    meaning: ' 和 @daily 相同',
     example: '@midnight',
     equivalent: '0 0 * * *',
   },
   {
     symbol: '@hourly',
-    meaning: 'Once an hour at the beginning of the hour',
+    meaning: '每小时一次整点开始',
     example: '@hourly',
     equivalent: '0 * * * *',
   },
   {
     symbol: '@reboot',
-    meaning: 'Run at startup',
+    meaning: '启动时运行',
     example: '',
     equivalent: '',
   },
@@ -102,7 +103,7 @@ const cronString = computed(() => {
 const cronValidationRules = [
   {
     validator: (value: string) => isCronValid(value),
-    message: 'This cron is invalid',
+    message: '此 cron 无效',
   },
 ];
 </script>
@@ -127,13 +128,13 @@ const cronValidationRules = [
 
     <div flex justify-center>
       <n-form :show-feedback="false" label-width="170" label-placement="left">
-        <n-form-item label="Verbose">
+        <n-form-item label="详细">
           <n-switch v-model:value="cronstrueConfig.verbose" />
         </n-form-item>
-        <n-form-item label="Use 24 hour time format">
+        <n-form-item label="使用 24 小时时间格式">
           <n-switch v-model:value="cronstrueConfig.use24HourTimeFormat" />
         </n-form-item>
-        <n-form-item label="Days start at 0">
+        <n-form-item label="天数从 0 开始">
           <n-switch v-model:value="cronstrueConfig.dayOfWeekStartIndexZero" />
         </n-form-item>
       </n-form>
@@ -141,12 +142,12 @@ const cronValidationRules = [
   </c-card>
   <c-card>
     <pre>
-┌──────────── [optional] seconds (0 - 59)
-| ┌────────── minute (0 - 59)
-| | ┌──────── hour (0 - 23)
-| | | ┌────── day of month (1 - 31)
-| | | | ┌──── month (1 - 12) OR jan,feb,mar,apr ...
-| | | | | ┌── day of week (0 - 6, sunday=0) OR sun,mon ...
+┌──────────── [可选] 秒 (0 - 59)
+| ┌────────── 分钟 (0 - 59)
+| | ┌──────── 小时 (0 - 23)
+| | | ┌────── 月份中的某一天 (1 - 31)
+| | | | ┌──── 月份 (1 - 12) 或 jan,feb,mar,apr ...
+| | | | | ┌── 一周中的某一天 (0 - 6, sunday=0) 或 sun,mon ...
 | | | | | |
 * * * * * * command</pre>
 

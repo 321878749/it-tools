@@ -61,7 +61,7 @@ const prettySQL = computed(() => formatSQL(rawSQL.value, config));
     </div>
   </div>
 
-  <n-form-item label="Your SQL query">
+  <n-form-item label="查询 SQL ">
     <c-input-text
       ref="inputElement"
       v-model:value="rawSQL"
@@ -75,7 +75,7 @@ const prettySQL = computed(() => formatSQL(rawSQL.value, config));
       monospace
     />
   </n-form-item>
-  <n-form-item label="Prettify version of your query">
+  <n-form-item label="美化SQL的版本">
     <TextareaCopyable :value="prettySQL" language="sql" :follow-height-of="inputElement" />
   </n-form-item>
 </template>

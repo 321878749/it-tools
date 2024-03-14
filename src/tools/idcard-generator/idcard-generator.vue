@@ -46,7 +46,15 @@ const region = ref({
 });
 const regionCode = ref('350104');
 function regionChange(data: RegionModel): void {
-  regionCode.value = data.area?.key;
+  if (data.province?.key){
+    regionCode.value = data.province?.key;
+  }
+  if (data.city?.key){
+    regionCode.value = data.city?.key;
+  }
+  if (data.area?.key){
+    regionCode.value = data.area?.key;
+  }
 }
 // 出生日期单选框
 const checkedValueRef = ref<string | null>(null);

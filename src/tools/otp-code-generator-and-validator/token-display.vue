@@ -13,13 +13,13 @@ const { tokens } = toRefs(props);
   <div>
     <div mb-5px w-full flex items-center>
       <div flex-1 text-left>
-        Previous
+        上一个
       </div>
       <div flex-1 text-center>
-        Current OTP
+        当前一次性密码
       </div>
       <div flex-1 text-right>
-        Next
+        下一个
       </div>
     </div>
     <div flex items-center>

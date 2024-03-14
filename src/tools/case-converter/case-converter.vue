@@ -3,13 +3,9 @@ import {
   camelCase,
   capitalCase,
   constantCase,
-  dotCase,
   headerCase,
-  noCase,
   paramCase,
-  pascalCase,
   pathCase,
-  sentenceCase,
   snakeCase,
 } from 'change-case';
 import InputCopyable from '../../components/InputCopyable.vue';
@@ -22,63 +18,40 @@ const input = ref('lorem ipsum dolor sit amet');
 
 const formats = computed(() => [
   {
-    label: 'Lowercase:',
+    label: '小写:',
     value: input.value.toLocaleLowerCase(),
   },
   {
-    label: 'Uppercase:',
+    label: '大写:',
     value: input.value.toLocaleUpperCase(),
   },
   {
-    label: 'Camelcase:',
+    label: '驼峰:',
     value: camelCase(input.value, baseConfig),
   },
   {
-    label: 'Capitalcase:',
+    label: '开头字母大写:',
     value: capitalCase(input.value, baseConfig),
   },
   {
-    label: 'Constantcase:',
+    label: '常量大写:',
     value: constantCase(input.value, baseConfig),
   },
   {
-    label: 'Dotcase:',
-    value: dotCase(input.value, baseConfig),
-  },
-  {
-    label: 'Headercase:',
+    label: '标题大小写:',
     value: headerCase(input.value, baseConfig),
   },
   {
-    label: 'Nocase:',
-    value: noCase(input.value, baseConfig),
-  },
-  {
-    label: 'Paramcase:',
+    label: '连接符连接:',
     value: paramCase(input.value, baseConfig),
   },
   {
-    label: 'Pascalcase:',
-    value: pascalCase(input.value, baseConfig),
-  },
-  {
-    label: 'Pathcase:',
+    label: '斜杠连接:',
     value: pathCase(input.value, baseConfig),
   },
   {
-    label: 'Sentencecase:',
-    value: sentenceCase(input.value, baseConfig),
-  },
-  {
-    label: 'Snakecase:',
+    label: '下划线连接:',
     value: snakeCase(input.value, baseConfig),
-  },
-  {
-    label: 'Mockingcase:',
-    value: input.value
-      .split('')
-      .map((char, index) => (index % 2 === 0 ? char.toUpperCase() : char.toLowerCase()))
-      .join(''),
   },
 ]);
 
@@ -93,8 +66,8 @@ const inputLabelAlignmentConfig = {
   <c-card>
     <c-input-text
       v-model:value="input"
-      label="Your string:"
-      placeholder="Your string..."
+      label="您的字符串:"
+      placeholder="您的字符串..."
       raw-text
       v-bind="inputLabelAlignmentConfig"
     />
