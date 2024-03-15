@@ -393,3 +393,7 @@ tools:
   idcard-generator:
     title: 身份证号生成
     description: 可根据地区和出生年月生成随机身份证号
+
+  mybatis-convert:
+    title: Mybatis日志转换
+    description: 可根据mybatis日志,转换为MySql

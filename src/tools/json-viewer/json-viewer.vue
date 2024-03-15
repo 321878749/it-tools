@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import JSON5 from 'json5';
 import { useStorage } from '@vueuse/core';
-import { formatJson } from './json.models';
+import { formatJson } from '../json-viewer/json.models';
 import { withDefaultOnError } from '@/utils/defaults';
 import { useValidation } from '@/composable/validation';
 import TextareaCopyable from '@/components/TextareaCopyable.vue';
@@ -18,7 +18,7 @@ const rawJsonValidation = useValidation({
   rules: [
     {
       validator: v => v === '' || JSON5.parse(v),
-      message: 'Provided JSON is not valid.',
+      message: '提供的 JSON 不是有效的.',
     },
   ],
 });

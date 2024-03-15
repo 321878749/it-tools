@@ -78,6 +78,7 @@ import { tool as macAddressLookup } from './mac-address-lookup';
 import { tool as xmlFormatter } from './xml-formatter';
 import { tool as yamlViewer } from './yaml-viewer';
 import { tool as idcardGenerator } from './idcard-generator';
+import { tool as mybatisConvert } from './mybatis-convert';
 
 export const toolsByCategory: ToolCategory[] = [
 
@@ -85,11 +86,12 @@ export const toolsByCategory: ToolCategory[] = [
     name: 'Common tool',
     components: [
       jsonViewer,
-      jsonMinify,
+      mybatisConvert,
+      idcardGenerator,
       jsonDiff,
       crontabGenerator,
       sqlPrettify,
-      idcardGenerator,
+      jsonMinify,
     ],
   },
   {
@@ -109,9 +111,10 @@ export const toolsByCategory: ToolCategory[] = [
       // yamlToToml,
       jsonToYaml,
       // jsonToToml,
-      listConverter,
+      // listConverter,
       // tomlToJson,
       // tomlToYaml,
+      mybatisConvert,
     ],
   },
   {
@@ -180,7 +183,6 @@ export const toolsByCategory: ToolCategory[] = [
     name: 'Crypto',
     components: [tokenGenerator, hashText, bcrypt, uuidGenerator, ulidGenerator, cypher, bip39, hmacGenerator, rsaKeyPairGenerator, passwordStrengthAnalyser, pdfSignatureChecker],
   },
-  
 ];
 
 export const tools = toolsByCategory.flatMap(({ components }) => components);
