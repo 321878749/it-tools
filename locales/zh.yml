@@ -397,3 +397,7 @@ tools:
   mybatis-convert:
     title: Mybatis日志转换
     description: 可根据mybatis日志,转换为MySql
+
+  json-extract:
+    title: JSON字段提取
+    description: 可根据字段名提取json中的字段数据

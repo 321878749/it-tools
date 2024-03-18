@@ -79,6 +79,7 @@ import { tool as xmlFormatter } from './xml-formatter';
 import { tool as yamlViewer } from './yaml-viewer';
 import { tool as idcardGenerator } from './idcard-generator';
 import { tool as mybatisConvert } from './mybatis-convert';
+import { tool as jsonExtract } from './json-extract';
 
 export const toolsByCategory: ToolCategory[] = [
 
@@ -92,6 +93,7 @@ export const toolsByCategory: ToolCategory[] = [
       crontabGenerator,
       sqlPrettify,
       jsonMinify,
+      jsonExtract
     ],
   },
   {
