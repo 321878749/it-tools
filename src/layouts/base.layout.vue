@@ -117,7 +117,7 @@ const tools = computed<ToolCategory[]>(() => [
 
         <command-palette />
 
-<!--        <locale-selector v-if="!styleStore.isSmallScreen" />-->
+        <locale-selector v-if="!styleStore.isSmallScreen" />
 
         <!-- <div>
           <NavbarButtons v-if="!styleStore.isSmallScreen" />
