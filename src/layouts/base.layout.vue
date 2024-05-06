@@ -5,7 +5,7 @@ import { RouterLink } from 'vue-router';
 import { Heart, Home2, Menu2 } from '@vicons/tabler';
 
 import { storeToRefs } from 'pinia';
-import SharkGradient from '../assets/shark.svg?component';
+import SharkGradient from '../assets/shark-tools2.svg?component';
 
 import MenuLayout from '../components/MenuLayout.vue';
 import NavbarButtons from '../components/NavbarButtons.vue';
@@ -109,11 +109,11 @@ const tools = computed<ToolCategory[]>(() => [
           </c-button>
         </c-tooltip>
 
-        <c-tooltip :tooltip="$t('home.uiLib')" position="bottom">
+        <!-- <c-tooltip :tooltip="$t('home.uiLib')" position="bottom">
           <c-button v-if="config.app.env === 'development'" to="/c-lib" circle variant="text" :aria-label="$t('home.uiLib')">
             <icon-mdi:brush-variant text-20px />
           </c-button>
-        </c-tooltip>
+        </c-tooltip> -->
 
         <command-palette />
 
