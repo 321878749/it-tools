@@ -398,6 +398,10 @@ tools:
     title: Mybatis日志转换
     description: 可根据mybatis日志,转换为MySql
 
+  sql-entity-converter:
+    title: sql转换java实体
+    description: 可根据sql转换为java实体 
+
   json-extract:
     title: JSON字段提取
     description: 可根据字段名提取json中的字段数据

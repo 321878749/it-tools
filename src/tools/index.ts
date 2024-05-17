@@ -80,6 +80,7 @@ import { tool as yamlViewer } from './yaml-viewer';
 import { tool as idcardGenerator } from './idcard-generator';
 import { tool as mybatisConvert } from './mybatis-convert';
 import { tool as jsonExtract } from './json-extract';
+import { tool as sqlEntityConverter } from './sql-entity-converter';
 
 export const toolsByCategory: ToolCategory[] = [
 
@@ -117,6 +118,7 @@ export const toolsByCategory: ToolCategory[] = [
       // tomlToJson,
       // tomlToYaml,
       mybatisConvert,
+      sqlEntityConverter,
     ],
   },
   {

@@ -43,8 +43,8 @@ const tools = computed<ToolCategory[]>(() => [
           <div class="title">
             SHARK-TOOLS
           </div>
-          <!-- <div class="divider" /> -->
-          <!-- <div class="subtitle">
+          <!-- <div class="divider" />
+          <div class="subtitle">
             {{ $t('home.subtitle') }}
           </div> -->
         </div>
@@ -62,33 +62,20 @@ const tools = computed<ToolCategory[]>(() => [
 
         <CollapsibleToolMenu :tools-by-category="tools" />
 
-        <!-- <div class="footer">
+        <div class="footer">
+        
           <div>
-            IT-Tools
-
-            <c-link target="_blank" rel="noopener" :href="`https://github.com/CorentinTh/it-tools/tree/v${version}`">
-              v{{ version }}
-            </c-link>
-
-            <template v-if="commitSha && commitSha.length > 0">
-              -
-              <c-link
-                target="_blank"
-                rel="noopener"
-                type="primary"
-                :href="`https://github.com/CorentinTh/it-tools/tree/${commitSha}`"
-              >
-                {{ commitSha }}
-              </c-link>
-            </template>
-          </div>
-          <div>
-            © {{ new Date().getFullYear() }}
-            <c-link target="_blank" rel="noopener" href="https://github.com/CorentinTh">
-              Corentin Thomasset
+            Copyright © {{ new Date().getFullYear() }}
+            <c-link target="_blank" rel="noopener" href="https://github.com/321878749/shark-tools">
+              shark-tools
             </c-link>
           </div>
-        </div> -->
+          <div>
+           <c-link target="_blank" rel="noopener" href="https://beian.miit.gov.cn/">
+              辽ICP备2024031071号
+            </c-link>
+          </div>
+        </div>
       </div>
     </template>
 

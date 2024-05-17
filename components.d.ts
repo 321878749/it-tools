@@ -190,6 +190,7 @@ declare module '@vue/runtime-core' {
     RsaKeyPairGenerator: typeof import('./src/tools/rsa-key-pair-generator/rsa-key-pair-generator.vue')['default']
     SlugifyString: typeof import('./src/tools/slugify-string/slugify-string.vue')['default']
     SpanCopyable: typeof import('./src/components/SpanCopyable.vue')['default']
+    SqlEntityConverter: typeof import('./src/tools/sql-entity-converter/sql-entity-converter.vue')['default']
     SqlPrettify: typeof import('./src/tools/sql-prettify/sql-prettify.vue')['default']
     StringObfuscator: typeof import('./src/tools/string-obfuscator/string-obfuscator.vue')['default']
     SvgPlaceholderGenerator: typeof import('./src/tools/svg-placeholder-generator/svg-placeholder-generator.vue')['default']
