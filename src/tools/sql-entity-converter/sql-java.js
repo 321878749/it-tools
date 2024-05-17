@@ -84,11 +84,11 @@ function convert(result,property,packagePath,authorName){
   
     var author = "Sun.yk";
     if(authorName){
-      author = authorName
+      author = authorName;
     }
-    var genCode = "top.sharktools\n\n";
+    var genCode = "package top.sharktools\n\n";
     if(packagePath){
-      genCode = packagePath+"\n\n";
+      genCode ="package "+packagePath+"\n\n";
     }
 		genCode += "/**\n * @Description:" + classDesc + "\r\n * @Author "+ author +"\r\n * @Date : "+getNowFormatDate()+"\r\n */\r\n";
     if(property == 'swagger'){
