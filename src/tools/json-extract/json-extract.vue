@@ -47,6 +47,9 @@ function extractFieldValueFromArrayOfObjects(rawJson: string, fieldName: string)
         resultStr += (`${obj[fieldName]}\n`);
         continue;
       }
+      if ( obj[fieldName] == null){
+        continue;
+      }
       // 如果字段是一个对象或数组，则继续递归地调用函数
       resultStr += (`${extractFieldValueFromArrayOfObjects(JSON.stringify([obj[fieldName]]), fieldName).toString()}\n`);
     }
