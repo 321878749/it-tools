@@ -5,7 +5,7 @@ import { RouterLink } from 'vue-router';
 import { Heart, Home2, Menu2 } from '@vicons/tabler';
 
 import { storeToRefs } from 'pinia';
-import SharkGradient from '../assets/shark-tools2.svg?component';
+import SharkGradient from '../assets/shark.svg?component';
 
 import MenuLayout from '../components/MenuLayout.vue';
 import NavbarButtons from '../components/NavbarButtons.vue';
